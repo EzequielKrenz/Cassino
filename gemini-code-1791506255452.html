@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cassino Virtual - Poker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .neon-text { text-shadow: 0 0 10px #fbbf24, 0 0 20px #f59e0b; }
+        .neon-box { box-shadow: 0 0 20px rgba(245, 158, 11, 0.3); border: 2px solid #fbbf24; }
+        .card { width: 70px; height: 100px; border-radius: 6px; background-color: white; color: black; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: bold; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center p-6 font-sans">
+    
+    <div class="max-w-4xl w-full flex flex-col items-center">
+        <h1 class="text-5xl font-bold text-yellow-400 mb-8 neon-text tracking-wider">TEXAS HOLD'EM</h1>
+        
+        <div class="bg-teal-900 p-8 rounded-[4rem] border-8 border-gray-800 neon-box w-full mb-8 flex flex-col items-center relative">
+            
+            <!-- Pote -->
+            <div class="absolute top-8 text-center">
+                <div class="text-gray-300 text-xs uppercase tracking-widest">Pote Total</div>
+                <div class="text-yellow-400 text-2xl font-bold font-mono">R$ 4.250,00</div>
+            </div>
+
+            <!-- Cartas Comunitárias -->
+            <div class="flex justify-center space-x-2 my-16">
+                <div class="card shadow-xl"><span class="text-red-600">A♥</span></div>
+                <div class="card shadow-xl">K♠</div>
+                <div class="card shadow-xl"><span class="text-red-600">J♦</span></div>
+                <div class="card shadow-xl opacity-50 border-2 border-dashed border-gray-400 bg-transparent text-transparent">?</div>
+                <div class="card shadow-xl opacity-50 border-2 border-dashed border-gray-400 bg-transparent text-transparent">?</div>
+            </div>
+
+            <!-- Mão do Jogador -->
+            <div class="mt-4 flex flex-col items-center">
+                <div class="flex space-x-2 rotate-2">
+                    <div class="card shadow-2xl -rotate-6 transform translate-x-2">Q♠</div>
+                    <div class="card shadow-2xl transform"><span class="text-red-600">10♥</span></div>
+                </div>
+            </div>
+
+            <!-- Ações -->
+            <div class="mt-8 flex space-x-4">
+                <button class="bg-red-600 hover:bg-red-500 text-white font-bold py-2 px-6 rounded transition-colors">FOLD</button>
+                <button class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded transition-colors">CALL (R$ 100)</button>
+                <button class="bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-2 px-6 rounded transition-colors">RAISE</button>
+            </div>
+        </div>
+
+        <a href="http://127.0.0.1" class="text-gray-400 hover:text-yellow-400 transition-colors underline decoration-dashed">
+            &larr; Voltar ao Lobby Principal
+        </a>
+    </div>
+
+</body>
+</html>

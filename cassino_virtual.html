@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Gold Casino</title>
+    
+    <!-- Carregando Tailwind CSS para o layout base -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Carregando Font Awesome para os ícones dos jogos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Carregando fonte do Google (Montserrat) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #050505;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(40, 10, 60, 0.4), transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(20, 50, 60, 0.4), transparent 50%);
+            background-attachment: fixed;
+            color: #ffffff;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Efeito de texto Dourado Brilhante */
+        .gold-text {
+            background: linear-gradient(to bottom, #FFDF73 22%, #D4AF37 45%, #996515 78%, #5C4000 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        /* Efeito de título Neon */
+        .neon-title {
+            text-transform: uppercase;
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px #e60073,
+                0 0 40px #e60073,
+                0 0 80px #e60073;
+            animation: pulsate 1.5s infinite alternate;
+        }
+
+        @keyframes pulsate {
+            100% {
+                text-shadow: 
+                0 0 4px #fff,
+                0 0 11px #fff,
+                0 0 19px #e60073,
+                0 0 40px #e60073,
+                0 0 80px #e60073,
+                0 0 100px #e60073;
+            }
+            0% {
+                text-shadow: 
+                0 0 2px #fff,
+                0 0 4px #fff,
+                0 0 6px #e60073,
+                0 0 10px #e60073,
+                0 0 45px #e60073,
+                0 0 55px #e60073;
+            }
+        }
+
+        /* Estilização dos Cards */
+        .game-card {
+            background: linear-gradient(145deg, rgba(30, 30, 30, 0.8), rgba(15, 15, 15, 0.9));
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(10px);
+            z-index: 1;
+        }
+
+        /* Linha de luz interna superior do card */
+        .game-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.8), transparent);
+            z-index: 2;
+        }
+
+        /* Efeito de Hover (Mouse em cima) nos Cards */
+        .game-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            border-color: rgba(212, 175, 55, 0.8);
+            box-shadow: 
+                0 20px 40px -10px rgba(0, 0, 0, 0.9),
+                0 0 20px rgba(212, 175, 55, 0.4),
+                inset 0 0 20px rgba(230, 0, 115, 0.2);
+        }
+
+        .game-card:hover .icon-container i {
+            transform: scale(1.1) rotate(5deg);
+            color: #FFDF73;
+            text-shadow: 0 0 15px rgba(255, 223, 115, 0.8);
+        }
+
+        .icon-container i {
+            transition: all 0.3s ease;
+            color: #D4AF37;
+        }
+
+        .neon-accent {
+            color: #00ffff;
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="w-full py-10 flex flex-col items-center justify-center relative border-b border-gray-800">
+        <div class="absolute inset-0 bg-black opacity-40 z-0"></div>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-5xl md:text-7xl font-black mb-2 tracking-wider">
+                <span class="neon-title">NEON</span> <span class="gold-text">CASINO</span>
+            </h1>
+            <p class="text-gray-300 text-lg md:text-xl font-light tracking-widest uppercase mt-4">
+                Sua sorte brilha no escuro
+            </p>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center py-16 px-4 sm:px-8">
+        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            
+            <!-- Card 1: Slot Machines (Porta 8000) -->
+            <a href="http://127.0.0.1:8000" class="game-card flex flex-col items-center text-center p-10 group decoration-none">
+                <div class="icon-container text-6xl md:text-7xl mb-6">
+                    <i class="fa-solid fa-slot-machine"></i>
+                </div>
+                <h2 class="text-3xl font-bold mb-3 text-white group-hover:gold-text transition-colors duration-300">
+                    Caça-Níqueis
+                </h2>
+                <p class="text-gray-400 text-sm md:text-base font-medium">
+                    Gire os rolos brilhantes e ganhe jackpots incríveis no nosso salão principal.
+                </p>
+                <div class="mt-8 px-6 py-2 rounded-full border border-gray-600 text-sm text-gray-300 group-hover:border-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-black font-bold transition-all duration-300 uppercase tracking-widest">
+                    Jogar Agora <i class="fa-solid fa-arrow-right ml-2"></i>
+                </div>
+            </a>
+
+            <!-- Card 2: Poker (Porta 8008) -->
+            <a href="http://127.0.0.1:8008" class="game-card flex flex-col items-center text-center p-10 group decoration-none">
+                <div class="icon-container text-6xl md:text-7xl mb-6">
+                    <i class="fa-solid fa-cards"></i>
+                    <!-- Fallback if pro icons aren't available in standard fontawesome kit -->
+                    <i class="fa-solid fa-club text-white neon-accent"></i>
+                </div>
+                <h2 class="text-3xl font-bold mb-3 text-white group-hover:gold-text transition-colors duration-300">
+                    Texas Hold'em
+                </h2>
+                <p class="text-gray-400 text-sm md:text-base font-medium">
+                    Mesas VIP com apostas altas. Mostre sua estratégia e vença os melhores.
+                </p>
+                <div class="mt-8 px-6 py-2 rounded-full border border-gray-600 text-sm text-gray-300 group-hover:border-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-black font-bold transition-all duration-300 uppercase tracking-widest">
+                    Entrar na Mesa <i class="fa-solid fa-arrow-right ml-2"></i>
+                </div>
+            </a>
+
+            <!-- Card 3: Roulette (Porta 8088) -->
+            <a href="http://127.0.0.1:8088" class="game-card flex flex-col items-center text-center p-10 group decoration-none">
+                <div class="icon-container text-6xl md:text-7xl mb-6">
+                    <i class="fa-solid fa-dharmachakra"></i>
+                </div>
+                <h2 class="text-3xl font-bold mb-3 text-white group-hover:gold-text transition-colors duration-300">
+                    Roleta Neon
+                </h2>
+                <p class="text-gray-400 text-sm md:text-base font-medium">
+                    Preto ou vermelho? Faça sua aposta e sinta a adrenalina da roleta giratória.
+                </p>
+                <div class="mt-8 px-6 py-2 rounded-full border border-gray-600 text-sm text-gray-300 group-hover:border-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-black font-bold transition-all duration-300 uppercase tracking-widest">
+                    Apostar <i class="fa-solid fa-arrow-right ml-2"></i>
+                </div>
+            </a>
+
+            <!-- Card 4: Blackjack (Porta 8888) -->
+            <a href="http://127.0.0.1:8888" class="game-card flex flex-col items-center text-center p-10 group decoration-none">
+                <div class="icon-container text-6xl md:text-7xl mb-6">
+                    <i class="fa-solid fa-dice-d20"></i>
+                </div>
+                <h2 class="text-3xl font-bold mb-3 text-white group-hover:gold-text transition-colors duration-300">
+                    Blackjack 21
+                </h2>
+                <p class="text-gray-400 text-sm md:text-base font-medium">
+                    Enfrente o dealer em uma experiência clássica de 21 com gráficos imersivos.
+                </p>
+                <div class="mt-8 px-6 py-2 rounded-full border border-gray-600 text-sm text-gray-300 group-hover:border-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-black font-bold transition-all duration-300 uppercase tracking-widest">
+                    Dar as Cartas <i class="fa-solid fa-arrow-right ml-2"></i>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <footer class="w-full py-8 text-center border-t border-gray-900 bg-black bg-opacity-60 relative z-10">
+        <p class="text-gray-500 text-sm">
+            &copy; 2026 Neon Gold Casino. Todos os direitos reservados.
+        </p>
+        <div class="mt-3 flex justify-center space-x-4 text-gray-600 text-lg">
+            <a href="#" class="hover:text-gray-300 transition-colors"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="hover:text-gray-300 transition-colors"><i class="fa-brands fa-discord"></i></a>
+            <a href="#" class="hover:text-gray-300 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <p class="text-xs text-gray-700 mt-4 uppercase tracking-widest">
+            Apenas para maiores de 18 anos. Jogue com responsabilidade.
+        </p>
+    </footer>
+
+</body>
+</html>

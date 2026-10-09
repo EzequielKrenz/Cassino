@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cassino Virtual - Slots</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .neon-text { text-shadow: 0 0 10px #fbbf24, 0 0 20px #f59e0b; }
+        .neon-box { box-shadow: 0 0 20px rgba(245, 158, 11, 0.3); border: 2px solid #fbbf24; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center p-6 font-sans">
+    
+    <div class="max-w-2xl w-full flex flex-col items-center">
+        <h1 class="text-5xl font-bold text-yellow-400 mb-8 neon-text tracking-wider">CAÇA-NÍQUEIS</h1>
+        
+        <!-- Máquina de Slots -->
+        <div class="bg-gray-800 p-8 rounded-2xl neon-box w-full mb-8">
+            <div class="flex justify-center space-x-4 mb-8">
+                <div class="bg-gray-900 border-2 border-yellow-500 rounded-xl w-24 h-32 flex items-center justify-center text-6xl shadow-inner">🍒</div>
+                <div class="bg-gray-900 border-2 border-yellow-500 rounded-xl w-24 h-32 flex items-center justify-center text-6xl shadow-inner">🍋</div>
+                <div class="bg-gray-900 border-2 border-yellow-500 rounded-xl w-24 h-32 flex items-center justify-center text-6xl shadow-inner">💎</div>
+            </div>
+            
+            <div class="flex justify-between items-center bg-gray-900 p-4 rounded-lg border border-gray-700">
+                <div class="text-xl">Saldo: <span class="text-yellow-400 font-bold">R$ 1.500,00</span></div>
+                <button class="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-400 hover:to-yellow-500 text-black font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105 shadow-lg">
+                    GIRAR (R$ 10)
+                </button>
+            </div>
+        </div>
+
+        <a href="http://127.0.0.1" class="text-gray-400 hover:text-yellow-400 transition-colors underline decoration-dashed">
+            &larr; Voltar ao Lobby Principal
+        </a>
+    </div>
+
+</body>
+</html>
